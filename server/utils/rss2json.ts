@@ -4,7 +4,21 @@ import type { RSSInfo } from "../types"
 export async function rss2json(url: string): Promise<RSSInfo | undefined> {
   if (!/^https?:\/\/[^\s$.?#].\S*/i.test(url)) return
 
-  const data = await myFetch(url)
+  // Fetch as text to avoid auto-parsing
+  const data = await myFetch(url, {
+    responseType: "text",
+  })
+
+  // Debug: check what we got
+  if (!data || (typeof data === "string" && data.length === 0)) {
+    console.error(`Failed to fetch RSS feed from ${url}: Empty response`)
+    return undefined
+  }
+
+  // Debug: log data type and length
+  const dataType = typeof data
+  const dataLength = typeof data === "string" ? data.length : JSON.stringify(data).length
+  console.log(`Fetched RSS from ${url}: type=${dataType}, length=${dataLength}`)
 
   const xml = new XMLParser({
     attributeNamePrefix: "",
@@ -16,6 +30,13 @@ export async function rss2json(url: string): Promise<RSSInfo | undefined> {
 
   let channel = result.rss && result.rss.channel ? result.rss.channel : result.feed
   if (Array.isArray(channel)) channel = channel[0]
+
+  // Validate channel exists
+  if (!channel) {
+    console.error(`Failed to parse RSS feed from ${url}:`)
+    console.error("Result structure:", JSON.stringify(result, null, 2).substring(0, 500))
+    return undefined
+  }
 
   const rss = {
     title: channel.title ?? "",
@@ -32,11 +53,21 @@ export async function rss2json(url: string): Promise<RSSInfo | undefined> {
 
   for (let i = 0; i < items.length; i++) {
     const val = items[i]
+    if (!val) continue // Skip invalid items
+
     const media = {}
+
+    // Helper function to safely get title
+    const getTitle = () => {
+      if (!val.title) return ""
+      if (typeof val.title === "string") return val.title
+      if (val.title.$text) return val.title.$text
+      return ""
+    }
 
     const obj = {
       id: val.guid && val.guid.$text ? val.guid.$text : val.id,
-      title: val.title && val.title.$text ? val.title.$text : val.title,
+      title: getTitle(),
       description: val.summary && val.summary.$text ? val.summary.$text : val.description,
       link: val.link && val.link.href ? val.link.href : val.link,
       author: val.author && val.author.name ? val.author.name : val["dc:creator"],

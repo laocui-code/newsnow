@@ -2,6 +2,7 @@ import process from "node:process"
 import { Interval } from "./consts"
 import { typeSafeObjectFromEntries } from "./type.util"
 import type { OriginSource, Source, SourceID } from "./types"
+import { aiSources } from "./ai-sources"
 
 const Time = {
   Test: 1,
@@ -13,13 +14,7 @@ const Time = {
 }
 
 export const originSources = {
-  baidu: {
-    name: "百度热搜",
-    column: "china",
-    color: "blue",
-    type: "hottest",
-    home: "https://www.baidu.com",
-  },
+  ...aiSources,
 } as const satisfies Record<string, OriginSource>
 
 export function genSources() {

@@ -11,7 +11,7 @@
   },
   "homepage": "https://github.com/ourongxing/newsnow",
   "scripts": {
-    "dev": "npm run presource && vite dev",
+    "dev": "NODE_TLS_REJECT_UNAUTHORIZED=0 npm run presource && NODE_TLS_REJECT_UNAUTHORIZED=0 vite dev",
     "build": "npm run presource && vite build",
     "lint": "eslint",
     "presource": "tsx ./scripts/favicon.ts && tsx ./scripts/source.ts",

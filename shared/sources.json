@@ -1,10 +1,458 @@
 {
-  "baidu": {
-    "name": "百度热搜",
-    "type": "hottest",
-    "column": "china",
-    "home": "https://www.baidu.com",
+  "langchain": {
+    "redirect": "langchain-framework",
+    "name": "LangChain",
+    "desc": "Framework for developing applications powered by language models",
+    "column": "release",
+    "home": "https://github.com/langchain-ai/langchain",
+    "color": "green",
+    "interval": 1800000,
+    "title": "Framework"
+  },
+  "langchain-framework": {
+    "name": "LangChain",
+    "desc": "Framework for developing applications powered by language models",
+    "column": "release",
+    "home": "https://github.com/langchain-ai/langchain",
+    "color": "green",
+    "interval": 1800000,
+    "title": "Framework"
+  },
+  "langchain-langgraph": {
+    "name": "LangChain",
+    "desc": "Framework for developing applications powered by language models",
+    "column": "release",
+    "home": "https://github.com/langchain-ai/langgraph",
+    "color": "green",
+    "interval": 1800000,
+    "title": "LangGraph"
+  },
+  "openai": {
+    "redirect": "openai-news",
+    "name": "OpenAI",
+    "desc": "OpenAI platform updates and news",
+    "column": "tech",
+    "home": "https://openai.com/news",
+    "color": "emerald",
+    "interval": 1800000,
+    "title": "News"
+  },
+  "openai-news": {
+    "name": "OpenAI",
+    "desc": "OpenAI platform updates and news",
+    "column": "tech",
+    "home": "https://openai.com/news",
+    "color": "emerald",
+    "interval": 1800000,
+    "title": "News"
+  },
+  "openai-platform": {
+    "name": "OpenAI",
+    "desc": "OpenAI platform updates and news",
+    "column": "tech",
+    "home": "https://platform.openai.com/docs/changelog",
+    "color": "emerald",
+    "interval": 1800000,
+    "title": "Platform"
+  },
+  "anthropic": {
+    "redirect": "anthropic-status",
+    "name": "Anthropic",
+    "desc": "Claude AI and research",
+    "column": "tech",
+    "home": "https://status.claude.com",
+    "color": "orange",
+    "interval": 1800000,
+    "title": "Service Status"
+  },
+  "anthropic-status": {
+    "name": "Anthropic",
+    "desc": "Claude AI and research",
+    "column": "tech",
+    "home": "https://status.claude.com",
+    "color": "orange",
+    "interval": 1800000,
+    "title": "Service Status"
+  },
+  "google": {
+    "redirect": "google-deepmind",
+    "name": "Google AI",
+    "desc": "Google AI research and products",
+    "column": "tech",
+    "home": "https://deepmind.google",
     "color": "blue",
-    "interval": 600000
+    "interval": 1800000,
+    "title": "DeepMind"
+  },
+  "google-deepmind": {
+    "name": "Google AI",
+    "desc": "Google AI research and products",
+    "column": "tech",
+    "home": "https://deepmind.google",
+    "color": "blue",
+    "interval": 1800000,
+    "title": "DeepMind"
+  },
+  "google-research": {
+    "name": "Google AI",
+    "desc": "Google AI research and products",
+    "column": "tech",
+    "home": "https://research.google",
+    "color": "blue",
+    "interval": 1800000,
+    "title": "Research"
+  },
+  "microsoft": {
+    "redirect": "microsoft-autogen",
+    "name": "Microsoft AI",
+    "desc": "Microsoft AI products and research",
+    "column": "tech",
+    "home": "https://github.com/microsoft/autogen",
+    "color": "cyan",
+    "interval": 1800000,
+    "title": "AutoGen"
+  },
+  "microsoft-autogen": {
+    "name": "Microsoft AI",
+    "desc": "Microsoft AI products and research",
+    "column": "tech",
+    "home": "https://github.com/microsoft/autogen",
+    "color": "cyan",
+    "interval": 1800000,
+    "title": "AutoGen"
+  },
+  "microsoft-blog": {
+    "name": "Microsoft AI",
+    "desc": "Microsoft AI products and research",
+    "column": "tech",
+    "home": "https://www.microsoft.com/en-us/ai/blog/",
+    "color": "cyan",
+    "interval": 1800000,
+    "title": "AI Blog"
+  },
+  "meta": {
+    "redirect": "meta-llamaindex",
+    "name": "Meta AI",
+    "desc": "Meta AI products and research",
+    "column": "tech",
+    "home": "https://github.com/run-llama/llama_index",
+    "color": "blue",
+    "interval": 1800000,
+    "title": "LlamaIndex"
+  },
+  "meta-llamaindex": {
+    "name": "Meta AI",
+    "desc": "Meta AI products and research",
+    "column": "tech",
+    "home": "https://github.com/run-llama/llama_index",
+    "color": "blue",
+    "interval": 1800000,
+    "title": "LlamaIndex"
+  },
+  "meta-pytorch": {
+    "name": "Meta AI",
+    "desc": "Meta AI products and research",
+    "column": "tech",
+    "home": "https://github.com/pytorch/pytorch",
+    "color": "blue",
+    "interval": 1800000,
+    "title": "PyTorch"
+  },
+  "huggingface": {
+    "name": "Hugging Face",
+    "desc": "Machine learning model hub and blog",
+    "column": "tech",
+    "home": "https://huggingface.co",
+    "color": "yellow",
+    "interval": 1800000
+  },
+  "apple": {
+    "name": "Apple ML",
+    "desc": "Apple Machine Learning Research",
+    "column": "tech",
+    "home": "https://machinelearning.apple.com",
+    "color": "gray",
+    "interval": 1800000
+  },
+  "nvidia": {
+    "name": "NVIDIA",
+    "desc": "NVIDIA Developer Blog",
+    "column": "tech",
+    "home": "https://developer.nvidia.com",
+    "color": "green",
+    "interval": 1800000
+  },
+  "alibaba": {
+    "name": "Alibaba AI",
+    "desc": "QwenLM and Alibaba AI",
+    "column": "tech",
+    "home": "https://qwenlm.github.io",
+    "color": "orange",
+    "interval": 1800000
+  },
+  "crewai": {
+    "name": "CrewAI",
+    "desc": "Multi-agent collaboration framework",
+    "column": "release",
+    "home": "https://github.com/CrewAIInc/crewAI",
+    "color": "purple",
+    "interval": 1800000
+  },
+  "vectordb": {
+    "redirect": "vectordb-qdrant",
+    "name": "Vector DB",
+    "desc": "Vector database updates",
+    "column": "release",
+    "home": "https://github.com/qdrant/qdrant",
+    "color": "violet",
+    "interval": 1800000,
+    "title": "Qdrant"
+  },
+  "vectordb-qdrant": {
+    "name": "Vector DB",
+    "desc": "Vector database updates",
+    "column": "release",
+    "home": "https://github.com/qdrant/qdrant",
+    "color": "violet",
+    "interval": 1800000,
+    "title": "Qdrant"
+  },
+  "vectordb-weaviate": {
+    "name": "Vector DB",
+    "desc": "Vector database updates",
+    "column": "release",
+    "home": "https://github.com/weaviate/weaviate",
+    "color": "violet",
+    "interval": 1800000,
+    "title": "Weaviate"
+  },
+  "vectordb-milvus": {
+    "name": "Vector DB",
+    "desc": "Vector database updates",
+    "column": "release",
+    "home": "https://github.com/milvus-io/milvus",
+    "color": "violet",
+    "interval": 1800000,
+    "title": "Milvus"
+  },
+  "vectordb-chroma": {
+    "name": "Vector DB",
+    "desc": "Vector database updates",
+    "column": "release",
+    "home": "https://github.com/chroma-core/chroma",
+    "color": "violet",
+    "interval": 1800000,
+    "title": "Chroma"
+  },
+  "observability": {
+    "redirect": "observability-langfuse",
+    "name": "AI Observability",
+    "desc": "AI observability and evaluation tools",
+    "column": "release",
+    "home": "https://github.com/langfuse/langfuse",
+    "color": "pink",
+    "interval": 1800000,
+    "title": "Langfuse"
+  },
+  "observability-langfuse": {
+    "name": "AI Observability",
+    "desc": "AI observability and evaluation tools",
+    "column": "release",
+    "home": "https://github.com/langfuse/langfuse",
+    "color": "pink",
+    "interval": 1800000,
+    "title": "Langfuse"
+  },
+  "observability-trulens": {
+    "name": "AI Observability",
+    "desc": "AI observability and evaluation tools",
+    "column": "release",
+    "home": "https://github.com/truera/trulens",
+    "color": "pink",
+    "interval": 1800000,
+    "title": "TruLens"
+  },
+  "observability-phoenix": {
+    "name": "AI Observability",
+    "desc": "AI observability and evaluation tools",
+    "column": "release",
+    "home": "https://github.com/Arize-ai/phoenix",
+    "color": "pink",
+    "interval": 1800000,
+    "title": "Arize Phoenix"
+  },
+  "observability-promptfoo": {
+    "name": "AI Observability",
+    "desc": "AI observability and evaluation tools",
+    "column": "release",
+    "home": "https://github.com/promptfoo/promptfoo",
+    "color": "pink",
+    "interval": 1800000,
+    "title": "promptfoo"
+  },
+  "techmedia": {
+    "redirect": "techmedia-mittr",
+    "name": "Tech Media",
+    "desc": "Technology news and coverage",
+    "column": "tech",
+    "home": "https://www.technologyreview.com",
+    "color": "slate",
+    "interval": 1800000,
+    "title": "MIT Tech Review"
+  },
+  "techmedia-mittr": {
+    "name": "Tech Media",
+    "desc": "Technology news and coverage",
+    "column": "tech",
+    "home": "https://www.technologyreview.com",
+    "color": "slate",
+    "interval": 1800000,
+    "title": "MIT Tech Review"
+  },
+  "techmedia-theverge": {
+    "name": "Tech Media",
+    "desc": "Technology news and coverage",
+    "column": "tech",
+    "home": "https://www.theverge.com",
+    "color": "slate",
+    "interval": 1800000,
+    "title": "The Verge"
+  },
+  "techmedia-techcrunch": {
+    "name": "Tech Media",
+    "desc": "Technology news and coverage",
+    "column": "tech",
+    "home": "https://techcrunch.com",
+    "color": "slate",
+    "interval": 1800000,
+    "title": "TechCrunch"
+  },
+  "techmedia-venturebeat": {
+    "name": "Tech Media",
+    "desc": "Technology news and coverage",
+    "column": "tech",
+    "home": "https://venturebeat.com",
+    "color": "slate",
+    "interval": 1800000,
+    "title": "VentureBeat"
+  },
+  "arxiv": {
+    "redirect": "arxiv-ai",
+    "name": "arXiv",
+    "desc": "Academic research papers",
+    "column": "tech",
+    "home": "https://arxiv.org/list/cs.AI/recent",
+    "color": "red",
+    "interval": 3600000,
+    "title": "Artificial Intelligence"
+  },
+  "arxiv-ai": {
+    "name": "arXiv",
+    "desc": "Academic research papers",
+    "column": "tech",
+    "home": "https://arxiv.org/list/cs.AI/recent",
+    "color": "red",
+    "interval": 3600000,
+    "title": "Artificial Intelligence"
+  },
+  "arxiv-ml": {
+    "name": "arXiv",
+    "desc": "Academic research papers",
+    "column": "tech",
+    "home": "https://arxiv.org/list/cs.LG/recent",
+    "color": "red",
+    "interval": 3600000,
+    "title": "Machine Learning"
+  },
+  "arxiv-cl": {
+    "name": "arXiv",
+    "desc": "Academic research papers",
+    "column": "tech",
+    "home": "https://arxiv.org/list/cs.CL/recent",
+    "color": "red",
+    "interval": 3600000,
+    "title": "Comp & Language"
+  },
+  "arxiv-cv": {
+    "name": "arXiv",
+    "desc": "Academic research papers",
+    "column": "tech",
+    "home": "https://arxiv.org/list/cs.CV/recent",
+    "color": "red",
+    "interval": 3600000,
+    "title": "Computer Vision"
+  },
+  "arxiv-statml": {
+    "name": "arXiv",
+    "desc": "Academic research papers",
+    "column": "tech",
+    "home": "https://arxiv.org/list/stat.ML/recent",
+    "color": "red",
+    "interval": 3600000,
+    "title": "Statistics ML"
+  },
+  "newsletters": {
+    "redirect": "newsletters-importai",
+    "name": "AI Newsletters",
+    "desc": "Quality AI newsletters",
+    "column": "tech",
+    "home": "https://importai.substack.com",
+    "color": "indigo",
+    "interval": 1800000,
+    "title": "Import AI"
+  },
+  "newsletters-importai": {
+    "name": "AI Newsletters",
+    "desc": "Quality AI newsletters",
+    "column": "tech",
+    "home": "https://importai.substack.com",
+    "color": "indigo",
+    "interval": 1800000,
+    "title": "Import AI"
+  },
+  "newsletters-chinai": {
+    "name": "AI Newsletters",
+    "desc": "Quality AI newsletters",
+    "column": "tech",
+    "home": "https://chinai.substack.com",
+    "color": "indigo",
+    "interval": 1800000,
+    "title": "ChinAI"
+  },
+  "solidot": {
+    "name": "Solidot",
+    "desc": "Technology and AI news",
+    "column": "tech",
+    "home": "https://www.solidot.org",
+    "color": "lime",
+    "interval": 1800000
+  },
+  "github": {
+    "redirect": "github-updated",
+    "name": "GitHub Discovery",
+    "desc": "Trending AI agent repositories",
+    "column": "release",
+    "home": "https://github.com/topics/agents?l=python&o=desc&s=updated",
+    "color": "gray",
+    "interval": 1800000,
+    "title": "Recently Updated"
+  },
+  "github-updated": {
+    "name": "GitHub Discovery",
+    "desc": "Trending AI agent repositories",
+    "column": "release",
+    "home": "https://github.com/topics/agents?l=python&o=desc&s=updated",
+    "color": "gray",
+    "interval": 1800000,
+    "title": "Recently Updated"
+  },
+  "github-created": {
+    "name": "GitHub Discovery",
+    "desc": "Trending AI agent repositories",
+    "column": "release",
+    "home": "https://github.com/topics/agents?l=python&o=desc&s=",
+    "color": "gray",
+    "interval": 1800000,
+    "title": "Recently Created"
   }
 }

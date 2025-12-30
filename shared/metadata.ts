@@ -15,6 +15,9 @@ export const columns = {
   finance: {
     zh: "财经",
   },
+  release: {
+    zh: "发布",
+  },
   focus: {
     zh: "关注",
   },

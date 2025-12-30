@@ -117,8 +117,8 @@ function NewsCard({ id, setHandleRef }: NewsCardProps) {
               backgroundImage: `url(/icons/${id.split("-")[0]}.png)`,
             }}
           />
-          <span className="flex flex-col">
-            <span className="flex items-center gap-2">
+          <span className="flex flex-col mr-2">
+            <span className="flex items-center gap-1">
               <span
                 className="text-xl font-bold"
                 title={sources[id].desc}

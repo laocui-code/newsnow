@@ -53,7 +53,11 @@ export function SearchBar() {
   )
   const inputRef = useRef<HTMLInputElement | null>(null)
 
-  const [value, setValue] = useState<SourceID>("github-trending-today")
+  const [value, setValue] = useState<SourceID>(() => {
+    // Dynamically get the first source from the list
+    const firstSource = sourceItems[0]?.sources[0]?.id
+    return firstSource || "langchain-framework" // fallback to langchain-framework if no source found
+  })
 
   useMount(() => {
     inputRef?.current?.focus()

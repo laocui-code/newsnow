@@ -1,5 +1,8 @@
 import * as cheerio from "cheerio"
 import type { NewsItem } from "@shared/types"
+import { defineSource } from "../utils/source"
+import { myFetch } from "../utils/fetch"
+import { parseRelativeDate } from "../utils/date"
 
 export default defineSource(async () => {
   const baseURL = "https://www.solidot.org"
