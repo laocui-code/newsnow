@@ -11,6 +11,7 @@ services:
       - JWT_SECRET=
       - INIT_TABLE=true
       - ENABLE_CACHE=true
+      - NODE_TLS_REJECT_UNAUTHORIZED=0
 
 volumes:
   newsnow_data:

@@ -118,7 +118,7 @@ function NewsCard({ id, setHandleRef }: NewsCardProps) {
             }}
           />
           <span className="flex flex-col mr-2">
-            <span className="flex items-center gap-1">
+            <span className="flex items-center gap-2">
               <span
                 className="text-xl font-bold"
                 title={sources[id].desc}

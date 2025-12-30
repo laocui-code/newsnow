@@ -9,6 +9,12 @@ export const TTL = 30 * 60 * 1000
  */
 export const Interval = 10 * 60 * 1000
 
+/**
+ * Enable filtering to show only items from the current week (starting Monday)
+ * Set to false to disable filtering
+ */
+export const FilterFromMonday = true
+
 export const Homepage = packageJSON.homepage
 
 export const Version = packageJSON.version

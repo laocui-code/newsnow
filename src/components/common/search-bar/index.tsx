@@ -106,7 +106,7 @@ export function SearchBar() {
           </Command.List>
         </OverlayScrollbar>
         <div className="flex-1 pt-2 px-4 min-w-350px max-md:hidden">
-          <CardWrapper id={value} />
+          <CardWrapper key={value} id={value} />
         </div>
       </div>
     </Command.Dialog>

@@ -1,7 +1,56 @@
-import type { SourceID, SourceResponse } from "@shared/types"
+import type { NewsItem, SourceID, SourceResponse } from "@shared/types"
+import { FilterFromMonday } from "@shared/consts"
 import { getters } from "#/getters"
 import { getCacheTable } from "#/database/cache"
 import type { CacheInfo } from "#/types"
+
+/**
+ * Get the start of the most recent Monday at 00:00:00
+ * @returns Timestamp of the most recent Monday
+ */
+function getMostRecentMonday(): number {
+  const now = new Date()
+  const dayOfWeek = now.getDay() // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+
+  // Calculate days to subtract to get to Monday
+  // If today is Sunday (0), go back 6 days
+  // If today is Monday (1), go back 0 days
+  // If today is Tuesday (2), go back 1 day, etc.
+  const daysToSubtract = dayOfWeek === 0 ? 6 : dayOfWeek - 1
+
+  const monday = new Date(now)
+  monday.setDate(now.getDate() - daysToSubtract)
+  monday.setHours(0, 0, 0, 0) // Set to 00:00:00
+
+  return monday.getTime()
+}
+
+/**
+ * Filter news items to only show those from the current week (starting Monday)
+ * @param items - Array of news items to filter
+ * @returns Filtered array of news items
+ */
+function filterByDate(items: NewsItem[]): NewsItem[] {
+  if (!FilterFromMonday) return items // No filtering if disabled
+
+  const mondayTimestamp = getMostRecentMonday()
+
+  return items.filter((item) => {
+    // Get the date from either pubDate or extra.date
+    const itemDate = item.pubDate || item.extra?.date
+
+    // Keep items without a date (some sources may not have dates)
+    if (!itemDate) return true
+
+    // Convert to timestamp if it's a string
+    const timestamp = typeof itemDate === "string"
+      ? new Date(itemDate).getTime()
+      : itemDate
+
+    // Keep items from Monday onwards
+    return timestamp >= mondayTimestamp
+  })
+}
 
 export default defineEventHandler(async (event): Promise<SourceResponse> => {
   try {
@@ -62,7 +111,9 @@ export default defineEventHandler(async (event): Promise<SourceResponse> => {
     }
 
     try {
-      const newData = (await getters[id]()).slice(0, 30)
+      const rawData = await getters[id]()
+      const filteredData = filterByDate(rawData)
+      const newData = filteredData.slice(0, 30)
       if (cacheTable && newData.length) {
         if (event.context.waitUntil) event.context.waitUntil(cacheTable.set(id, newData))
         else await cacheTable.set(id, newData)
